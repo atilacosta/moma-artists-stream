@@ -116,7 +116,7 @@ with open('parallel_artists.csv', mode='w', newline='') as artistsCSV:
             nationality = "Other"
 
         isAlive = "No"
-        if row["EndDate"] == "0":
+        if row["EndDate"] == "0" and int(row["BeginDate"]) > 1930:
             isAlive = "Yes"
 
         artistsWriter.writerow([nationality] + [isAlive] + [row["Gender"]])

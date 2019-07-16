@@ -74,7 +74,7 @@ pre, code { font-family: "Menlo", monospace; }
 <script src="http://www.jasondavies.com/parallel-sets/highlight.min.js"></script>
 <script>
 var chart = d3.parsets()
-      .dimensions(["Gender", "Nationality"]);
+      .dimensions(["Gender", "isAlive","Nationality"]);
 
 var vis = d3.select("#vis").append("svg")
     .attr("width", chart.width())
@@ -82,7 +82,7 @@ var vis = d3.select("#vis").append("svg")
 
 
 
-d3.csv("https://media.githubusercontent.com/media/MuseumofModernArt/collection/master/Artists.csv", function(error, csv) {
+d3.csv("https://raw.githubusercontent.com/atilacosta/moma-artists-stream/master/parallel_artists.csv", function(error, csv) {
     console.log(error)
     console.log(csv)
   vis.datum(csv).call(chart);
